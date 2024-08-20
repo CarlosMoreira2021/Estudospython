@@ -1,6 +1,9 @@
+
+
+
 def pedido_cafe():
     total = 0  
-    
+
     while True:
         print('Escolha seu café:')
         print(' [0] Cancelar pedido')
@@ -37,5 +40,3 @@ def pedido_cafe():
 
         except ValueError:
             print('Entrada inválida. Por favor, insira um número.')
-
-pedido_cafe()
