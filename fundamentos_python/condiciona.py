@@ -1,6 +1,3 @@
-
-
-
 def pedido_cafe():
     total = 0  
 
@@ -33,10 +30,18 @@ def pedido_cafe():
             else:
                 print('Número incorreto. Por favor, escolha um número entre 0 e 4.')
                 continue  
-            repetir = input('Deseja fazer outro pedido? (s/n): ').lower()
-            if repetir != 's':
+            
+            while True:
+                repetir = input('Deseja fazer outro pedido? (s/n): ').lower()
+                if repetir in ['s', 'n']:
+                    break
+                print('Entrada inválida. Por favor, insira "s" para sim ou "n" para não.')
+
+            if repetir == 'n':
                 print(f'Obrigado! O total do seu pedido é R$ {total:.2f}.')
                 break  
 
         except ValueError:
             print('Entrada inválida. Por favor, insira um número.')
+
+pedido_cafe()
